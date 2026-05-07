@@ -1,1 +1,1 @@
-#
+from .mango import main
