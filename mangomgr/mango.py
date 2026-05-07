@@ -1,11 +1,16 @@
+import os
+gtmpout = None
+
+btn_style = {"bg": "#21262D", "fg": "#C9D1D9", "relief": "flat", "width": 20, "font": ("Arial", 10, "bold"), "pady": 5}
+
+DB_PATH = os.path.join(os.path.expanduser("~"), "mangomgr_db.txt")
+
 def main():  
   import tkinter as tk
-  import ast,os
+  import ast
   from tkinter import messagebox, simpledialog
 
-  gtmpout = None
 
-  DB_PATH = os.path.join(os.path.expanduser("~"), "mangomgr_db.txt")
 
   # --- DATABASE FUNCTIONS ---
 
@@ -212,7 +217,6 @@ def main():
 
   tk.Label(root, text="MANGO", font=("Consolas", 24, "bold"), bg="#0D1117", fg="#FFAC1C").pack(pady=30)
 
-  btn_style = {"bg": "#21262D", "fg": "#C9D1D9", "relief": "flat", "width": 20, "font": ("Arial", 10, "bold"), "pady": 5}
 
   tk.Button(root, text="New Repository", command=lambda: action("repo"), **btn_style).pack(pady=10)
   tk.Button(root, text="Commit", command=lambda: action("commit"), **btn_style).pack(pady=10)
